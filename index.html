@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,400;1,800&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./desktop.css" media="(min-width: 930px)">
+  <title>Age Calculator</title>
+</head>
+<body>
+  
+  <main class="container">
+
+    <form action="submit">
+
+      <div class="day-input input-container">
+        <label for="day">DAY</label>
+        <input type="text" placeholder="DD">
+        <p class="error-message inactive" id="day-error-message">This field is required</p>
+        <p class="error-message inactive" id="invalid-day">Must be a valid day</p>
+      </div>
+
+      <div class="month-input input-container">
+        <label for="month">MONTH</label>
+        <input type="text" placeholder="MM">
+        <p class="error-message inactive" id="month-error-message">This field is required</p>
+        <p class="error-message inactive" id="invalid-month">Must be a valid month</p>
+      </div>
+
+      <div class="year-input input-container">
+        <label for="year">YEAR</label>
+        <input type="text" placeholder="YYYY">
+        <p class="error-message inactive" id="year-error-message">This field is required</p>
+        <p class="error-message inactive" id="invalid-year">Must be in the past</p>
+      </div>
+
+      <button></button>
+
+    </form>
+
+    <div class="result">
+
+      <div class="years">
+        <p><span id="years">--</span> years</p>
+      </div>
+
+      <div class="months">
+        <p><span id="months">--</span> months</p>
+      </div>
+
+      <div class="days">
+        <p><span id="days">--</span> days</p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="./main.js"></script>
+</body>
+</html>
