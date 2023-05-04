@@ -53,12 +53,11 @@ function submitForm(event) {
     const userDate = new Date(year, month - 1, day);
     const currentDate = new Date();
 
-    const diffTime = Math.abs(currentDate - userDate);
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    const diffTime = currentDate.getTime() - userDate.getTime();
 
-    const years = Math.floor(diffDays / 365);
-    const months = Math.floor((diffDays / 365) / 30);
-    const days = diffDays % 30;
+    const years = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365));
+    const months = Math.floor((diffTime % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+    const days = Math.floor((diffTime % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
 
     yearsResult.textContent = years;
     monthsResult.textContent = months;
