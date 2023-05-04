@@ -53,15 +53,28 @@ function submitForm(event) {
     const userDate = new Date(year, month - 1, day);
     const currentDate = new Date();
 
-    const diffTime = currentDate.getTime() - userDate.getTime();
+    const diffYears = currentDate.getFullYear() - userDate.getFullYear();
+    let diffMonths = currentDate.getMonth() - userDate.getMonth();
+    let diffDays = currentDate.getDate() - userDate.getDate();
 
-    const years = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365));
-    const months = Math.floor((diffTime % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
-    const days = Math.floor((diffTime % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+    if (diffMonths < 0 || (diffMonths === 0 && diffDays < 0)) {
+      diffYears--;
+      diffMonths += 12;
+    }
 
-    yearsResult.textContent = years;
-    monthsResult.textContent = months;
-    daysResult.textContent = days;
+    if (diffDays < 0) {
+      const monthDays = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate();
+      diffDays += monthDays;
+      diffMonths--;
+    }
+
+    // const years = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365));
+    // const months = Math.floor((diffTime % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+    // const days = Math.floor((diffTime % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+
+    yearsResult.textContent = diffYears;
+    monthsResult.textContent = diffMonths;
+    daysResult.textContent = diffDays;
   }
 }
 
