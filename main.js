@@ -53,7 +53,7 @@ function submitForm(event) {
     const userDate = new Date(year, month - 1, day);
     const currentDate = new Date();
 
-    const diffYears = currentDate.getFullYear() - userDate.getFullYear();
+    let diffYears = currentDate.getFullYear() - userDate.getFullYear();
     let diffMonths = currentDate.getMonth() - userDate.getMonth();
     let diffDays = currentDate.getDate() - userDate.getDate();
 
@@ -67,10 +67,6 @@ function submitForm(event) {
       diffDays += monthDays;
       diffMonths--;
     }
-
-    // const years = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365));
-    // const months = Math.floor((diffTime % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
-    // const days = Math.floor((diffTime % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
 
     yearsResult.textContent = diffYears;
     monthsResult.textContent = diffMonths;
