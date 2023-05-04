@@ -19,27 +19,27 @@
     <form action="submit">
 
       <div class="day-input input-container">
-        <label for="day">DAY</label>
-        <input type="text" placeholder="DD">
+        <label id="day-label" for="day">DAY</label>
+        <input type="text" placeholder="DD" id="day-input">
         <p class="error-message inactive" id="day-error-message">This field is required</p>
-        <p class="error-message inactive" id="invalid-day">Must be a valid day</p>
+        <p class="error-message inactive" id="invalid-day-message">Must be a valid day</p>
       </div>
 
       <div class="month-input input-container">
-        <label for="month">MONTH</label>
-        <input type="text" placeholder="MM">
+        <label id="month-label" for="month">MONTH</label>
+        <input type="text" placeholder="MM" id="month-input">
         <p class="error-message inactive" id="month-error-message">This field is required</p>
-        <p class="error-message inactive" id="invalid-month">Must be a valid month</p>
+        <p class="error-message inactive" id="invalid-month-message">Must be a valid month</p>
       </div>
 
       <div class="year-input input-container">
-        <label for="year">YEAR</label>
-        <input type="text" placeholder="YYYY">
+        <label id="year-label" for="year">YEAR</label>
+        <input type="text" placeholder="YYYY" id="year-input">
         <p class="error-message inactive" id="year-error-message">This field is required</p>
-        <p class="error-message inactive" id="invalid-year">Must be in the past</p>
+        <p class="error-message inactive" id="invalid-year-message">Must be in the past</p>
       </div>
 
-      <button></button>
+      <button id="submit"></button>
 
     </form>
 
